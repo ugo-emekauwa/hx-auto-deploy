@@ -22,9 +22,9 @@ Before proceeding with running the HyperFlex Auto Deploy script for dCloud, an A
 9. Minimize the jump server RDP window and return to the wkst1 desktop.
 10. On the wkst1 desktop, right click the **HX_Auto_Deploy.py** file and select **Edit with IDLE 3.7 (64-bit)**.
 11. In the HX_Auto_Deploy.py file, under the **MODULE REQUIREMENT 1** section, set the key_id variable by pasting in the **API Key ID** from step 8, in-between the quotes. For example:
-```py
-key_id = "5c89885075646127773ec143/5c82fc477577712d3088eb2f/5c8987b17577712d302eaaff"
-```
+   ```py
+   key_id = "5c89885075646127773ec143/5c82fc477577712d3088eb2f/5c8987b17577712d302eaaff"
+   ```
 12. Enter **CTRL+S** to save the **API Key ID** to the HX_Auto_Deploy.py script.
 13. Press **F5** to run the script.
 
