@@ -1,4 +1,4 @@
-# HyperFlex Edge Auto Deploy with Intersight (dCloud)
+# HyperFlex Edge Auto Deploy with Cisco Intersight (dCloud)
 
 The HyperFlex Edge Auto Deploy script enables automated deployment of Cisco HyperFlex Edge clusters through the Cisco Intersight API.
 
