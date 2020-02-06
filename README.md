@@ -2,7 +2,7 @@
 
 The HyperFlex Edge Auto Deploy script enables automated deployment of Cisco HyperFlex Edge clusters through the Cisco Intersight API.
 
-The script is available for use in the following dCloud demonstrations debuting at Cisco Live Barcelona 2020:
+The script is available for use in the following dCloud demonstrations debuting at Cisco Live 2020, Barcelona:
 
 1. _Cisco HyperFlex Edge with Intersight v1 (All Flash, 2 Node)_
 2. _Cisco HyperFlex Edge with Intersight v1 (Hybrid, 2 Node)_
