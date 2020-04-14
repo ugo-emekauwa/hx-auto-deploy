@@ -16,20 +16,20 @@ Before proceeding with running the HyperFlex Auto Deploy script for dCloud, an A
 3. In the Cisco Intersight menu, click the **Settings** icon, then select **Settings**.
 4. In the Settings pane, go to the API section and click **API Keys**.
 5. In the API keys pane, click **Generate API Key**.
-6. In the **Generate API Key** window, under **Description** fill-in the description field for the API key(e.g. _Key01_).
-7. In the **Generate API Key** window, under **API Key Purpose** select _API key for legacy Python SDK based on OpenAPI schema version 2_.
+6. In the **Generate API Key** window, under **Description**, fill-in the description field for the API key (e.g. _Key01_).
+7. In the **Generate API Key** window, under **API Key Purpose**, select _API key for legacy Python SDK based on OpenAPI schema version 2_.
 8. In the **Generate API Key** window, click the **Generate** button.
 9. In the **Generate API Key** window, copy the **API Key ID**.
 10. Minimize the jump server RDP window and return to the wkst1 desktop.
 11. On the wkst1 desktop, right click the **HX_Auto_Deploy.py** file and select **Edit with IDLE 3.7 (64-bit)**.
-12. In the HX_Auto_Deploy.py file, under the **MODULE REQUIREMENT 1** section, set the key_id variable by pasting in the **API Key ID** from step 8, in-between the quotes. For example:
+12. In the **HX_Auto_Deploy.py** file, under the **MODULE REQUIREMENT 1** section, set the key_id variable by pasting in the **API Key ID** from step 8, in-between the quotes. For example:
     ```py
     key_id = "5c89885075646127773ec143/5c82fc477577712d3088eb2f/5c8987b17577712d302eaaff"
     ```
 13. Enter **CTRL+S** to save the **API Key ID** to the HX_Auto_Deploy.py script.
 14. Press **F5** to run the script.
 
-Once the HX_Auto_Deploy script has completed running, you can return to the Cisco Intersight GUI to see the HyperFlex Edge cluster profile created and in a state of deployment in the **Profiles** section.
+Once the **HX_Auto_Deploy** script has completed running, you can return to the Cisco Intersight GUI to see the HyperFlex Edge cluster profile created and in a state of deployment in the **Profiles** section.
 
 The **HyperFlex Notification Tool** located on the wkst1 desktop or available in the Github repository at [https://github.com/ugo-emekauwa/hyperflex-notification-tool](https://github.com/ugo-emekauwa/hyperflex-notification-tool) can be used to use auotmated updates on the status of the HyperFlex Edge deployment.
 
