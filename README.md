@@ -43,7 +43,7 @@ In order for the **HX_Auto_Deploy.py** script to work, the following types of In
 5. System Configuration Policy (DNS, NTP and Timezone)
 6. Local Credential Policy (Security)
 
-In the dCloud HyperFlex Edge 2-Node demos, these Intersight HyperFlex policies have been pre-created with the required settings using a script named **hx_policy_maker.py**. The **hx_policy_maker.py** script is available in the GitHub repository named **HyperFlex Edge Policy Maker for Cisco Intersight (dCloud)** at [https://github.com/ugo-emekauwa/hyperflex-notification-tool](https://github.com/ugo-emekauwa/hyperflex-notification-tool).
+In the dCloud HyperFlex Edge 2-Node demos, these Intersight HyperFlex policies have been pre-created with the required settings using a script named **hx_policy_maker.py**. The **hx_policy_maker.py** script is available in the GitHub repository named **HyperFlex Edge Policy Maker for Cisco Intersight (dCloud)** at [https://github.com/ugo-emekauwa/hx-policy-maker](https://github.com/ugo-emekauwa/hx-policy-maker).
 
 ## Author:
 Ugo Emekauwa
