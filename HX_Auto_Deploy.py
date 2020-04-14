@@ -4,6 +4,7 @@ Author: Ugo Emekauwa
 Contact: uemekauw@cisco.com, uemekauwa@gmail.com
 Summary: The HyperFlex Edge Auto Deploy Script enables automated deployment
           of Cisco HyperFlex Edge clusters through the Cisco Intersight API.
+GitHub Repository: https://github.com/ugo-emekauwa/hx-auto-deploy
 """
 
 ########################
@@ -83,7 +84,7 @@ intersight_account_name = intersight_api_test
 
 # Define required variables for HyperFlex Cluster Profile
 hx_cluster_profile_name = "dcloud-hx-edge-cluster-1"
-hx_software_version = "4.0(1b)"
+hx_software_version = "4.0(2a)"
 hx_mgmt_platform_type = "EDGE"
 hx_vlan_id = 100
 hx_node1_attribute = "198.18.135.116"
