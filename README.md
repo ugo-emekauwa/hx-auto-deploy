@@ -31,10 +31,10 @@ Before proceeding with running the HyperFlex Auto Deploy script for dCloud, an A
 
 Once the **HX_Auto_Deploy** script has completed running, you can return to the Cisco Intersight GUI to see the HyperFlex Edge cluster profile created and in a state of deployment in the **Profiles** section.
 
-The **HyperFlex Notification Tool** located on the wkst1 desktop or available in the Github repository at [https://github.com/ugo-emekauwa/hyperflex-notification-tool](https://github.com/ugo-emekauwa/hyperflex-notification-tool) can be used to use auotmated updates on the status of the HyperFlex Edge deployment.
+The **HyperFlex Notification Tool** located on the wkst1 desktop or available on GitHub at [https://github.com/ugo-emekauwa/hyperflex-notification-tool](https://github.com/ugo-emekauwa/hyperflex-notification-tool) can be used to receive automated updates on the status of the HyperFlex Edge deployment.
 
 ## Dependencies:
-In order for the **HX_Auto_Deploy.py** script to work, the following types of Intersight HyperFlex policies must already be in place on the targeted Intersight account:
+In order for the **HX_Auto_Deploy.py** script to work, the following types of HyperFlex policies must already be in place on the targeted Intersight account:
 
 1. Cluster Network Configuration Policy
 2. Node Configuration Policy (IP and Hostname)
@@ -43,7 +43,7 @@ In order for the **HX_Auto_Deploy.py** script to work, the following types of In
 5. System Configuration Policy (DNS, NTP and Timezone)
 6. Local Credential Policy (Security)
 
-In the dCloud HyperFlex Edge 2-Node demos, these Intersight HyperFlex policies have been pre-created with the required settings using a script named **hx_policy_maker.py**. The **hx_policy_maker.py** script is available in the GitHub repository named **HyperFlex Edge Policy Maker for Cisco Intersight (dCloud)** at [https://github.com/ugo-emekauwa/hx-policy-maker](https://github.com/ugo-emekauwa/hx-policy-maker).
+In the HyperFlex Edge 2-Node demo environments on dCloud, these HyperFlex policies have been pre-created with the required settings using a script named **hx_policy_maker.py**. The **hx_policy_maker.py** script is available on GitHub in the repository named **HyperFlex Edge Policy Maker for Cisco Intersight (dCloud)** at [https://github.com/ugo-emekauwa/hx-policy-maker](https://github.com/ugo-emekauwa/hx-policy-maker).
 
 ## Author:
 Ugo Emekauwa
