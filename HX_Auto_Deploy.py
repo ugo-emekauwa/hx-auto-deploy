@@ -84,7 +84,7 @@ intersight_account_name = intersight_api_test
 
 # Define required variables for HyperFlex Cluster Profile
 hx_cluster_profile_name = "dcloud-hx-edge-cluster-1"
-hx_software_version = "4.0(2a)"
+hx_software_version = "4.0(2b)"
 hx_mgmt_platform_type = "EDGE"
 hx_vlan_id = 100
 hx_node1_attribute = "198.18.135.116"
