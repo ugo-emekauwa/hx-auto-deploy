@@ -1,6 +1,14 @@
 # Cisco HyperFlex Edge Automated Deployment Tool for Cisco Intersight (HX Auto Deploy)
 The Cisco HyperFlex Edge Automated Deployment Tool enables automated deployment of Cisco HyperFlex Edge cluster installations through the Cisco Intersight API.
 
+## What's New:
+The HX Auto Deploy Tool, which was originally built for Cisco dCloud, has been re-designed and upgraded to work in any environment due to popular demand.
+Here are a few of the new features:
+  - Easily modifiable variable values for use in any environment.
+  - Built-in HyperFlex policy creation and configuration on Cisco Intersight. No more dependencies on other scripts.
+  - Dynamic support for all HyperFlex Edge cluster sizes on Cisco Intersight.
+  - Advanced error-checking for HyperFlex configuration requirements similar to the Intersight GUI, in order to avoid unnecessary troubleshooting.
+
 ## Prerequisites:
 1. Python 3 installed, which can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/).
 2. The Cisco Intersight SDK for Python, which can be installed by running:
