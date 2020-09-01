@@ -5,7 +5,7 @@ The Cisco HyperFlex Edge Automated Deployment Tool enables automated deployment 
 1. Python 3 installed, which can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/).
 2. The Cisco Intersight SDK for Python, which can be installed by running:
    ```py
-   pip install git+https://github.com/CiscoUcs/intersight-python.git
+   python -m pip install git+https://github.com/CiscoUcs/intersight-python.git
    ```
    More information on the Cisco Intersight SDK for Python can be found at [https://github.com/CiscoUcs/intersight-python](https://github.com/CiscoUcs/intersight-python).
 3. [_Optional_] If you already have the Cisco Intersight SDK for Python installed, you may need to upgrade. An upgrade can be performed with the following command:
