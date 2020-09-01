@@ -17,7 +17,7 @@ Here are a few of the new features:
    ```
    More information on the Cisco Intersight SDK for Python can be found at [https://github.com/CiscoUcs/intersight-python](https://github.com/CiscoUcs/intersight-python).
 3. [_Optional_] If you already have the Cisco Intersight SDK for Python installed, you may need to upgrade. An upgrade can be performed by running the following command:
-   ```
+   ```py
    python -m pip install git+https://github.com/CiscoUcs/intersight-python.git --upgrade --user
    ```
 4. A version 2 API key from your Intersight account. To learn how to generate an API key for your Intersight account, more information can be found at [https://intersight.com/help/features#rest_apis](https://intersight.com/help/features#rest_apis).
@@ -30,7 +30,7 @@ Here are a few of the new features:
 3. Edit the HX_Auto_Deploy.py file to set the **key_id** variable using the following instructions:
    - Open the HX_Auto_Deploy.py file in an IDLE or text editor of choice.
    - Find the comment:
-     ```
+     ```py
      ########################
      # MODULE REQUIREMENT 1 #
      ########################
@@ -43,7 +43,7 @@ Here are a few of the new features:
 4. Edit the HX_Auto_Deploy.py file to set the **key** variable using the following instructions:
    - Open the HX_Auto_Deploy.py file in an IDLE or text editor of choice.
    - Find the comment:
-     ```
+     ```py
      ########################
      # MODULE REQUIREMENT 2 #
      ########################
@@ -56,17 +56,17 @@ Here are a few of the new features:
 5. Edit the HX_Auto_Deploy.py file to set all the HyperFlex configuration variable values using the following instructions:
    - Open the HX_Auto_Deploy.py file in an IDLE or text editor of choice.
    - Find the comment:
-     ```
+     ```py
      ########################
      # MODULE REQUIREMENT 3 #
      ########################
      ```
    - Underneath, you will find the instructions to edit the HyperFlex configuration variable values to match your environment. Each variable has a sample value for ease of use. The variable values to edit begin under the comment:
-     ```
+     ```py
      ####### Start Configuration Settings - Provide values for the variables listed below. #######
      ```
      Completion of editing the HyperFlex configuration variable values is marked by the comment:
-     ```
+     ```py
      ####### Finish Configuration Settings - The required value entries are complete. #######
      ```
 6. Save the changes you have made to the HX_Auto_Deploy.py file.
