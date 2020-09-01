@@ -2,12 +2,12 @@
 The Cisco HyperFlex Edge Automated Deployment Tool enables automated deployment of Cisco HyperFlex Edge cluster installations through the Cisco Intersight API.
 
 ## What's New:
-The HX Auto Deploy Tool, which was originally built for Cisco dCloud, has been re-designed and upgraded to work in any environment due to popular demand.
+The **HX Auto Deploy Tool**, which was originally built for Cisco dCloud, has been re-designed and upgraded to work in any environment due to popular demand.
 Here are a few of the new features:
   - Easily modifiable variable values for use in any environment.
   - Built-in HyperFlex policy creation and configuration on Cisco Intersight. No more dependencies on other scripts.
   - Dynamic support for all HyperFlex Edge cluster sizes on Cisco Intersight.
-  - Advanced error-checking for HyperFlex configuration requirements similar to the Intersight GUI, in order to avoid unnecessary troubleshooting.
+  - Advanced error-checking for HyperFlex configuration requirements similar to the Cisco Intersight GUI, in order to avoid unnecessary troubleshooting.
 
 ## Prerequisites:
 1. Python 3 installed, which can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/).
@@ -71,9 +71,9 @@ Here are a few of the new features:
 6. Save the changes you have made to the HX_Auto_Deploy.py file.
 7. Run the HX_Auto_Deploy.py file.
 
-Once the **HX_Auto_Deploy** tool has completed running, you can return to the Cisco Intersight GUI to see the HyperFlex Edge cluster profile created and in a state of deployment in the **Profiles** section.
+Once the **HX Auto Deploy Tool** has completed running, you can return to the Cisco Intersight GUI to see the HyperFlex Edge cluster profile created and in a state of deployment in the **CONFIGURE/Profiles** section.
 
-The **HyperFlex Notification Tool** located on the wkst1 desktop or available on GitHub at [https://github.com/ugo-emekauwa/hyperflex-notification-tool](https://github.com/ugo-emekauwa/hyperflex-notification-tool) can be used to receive automated updates on the status of the HyperFlex Edge deployment.
+The **HyperFlex Notification Tool** available on GitHub at [https://github.com/ugo-emekauwa/hyperflex-notification-tool](https://github.com/ugo-emekauwa/hyperflex-notification-tool) can be used to receive automated updates on the status of the HyperFlex Edge deployment.
 
 ## Use Cases:
 The Cisco HyperFlex Edge Automated Deployment Tool for Cisco Intersight can be demoed on Cisco dCloud in the following labs:
