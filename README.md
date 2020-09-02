@@ -87,6 +87,11 @@ The HyperFlex Edge Automated Deployment Tool for Cisco Intersight is featured on
 
 dCloud is available at [https://dcloud.cisco.com](https://dcloud.cisco.com), where Cisco product demonstrations and labs can be found in the Catalog.
 
+## Related Tools:
+Here are similar tools to help administer and manage Cisco HyperFlex environments.
+- [HyperFlex Notification Tool for Cisco Intersight](https://github.com/ugo-emekauwa/hyperflex-notification-tool)
+- [Cisco HyperFlex API Token Manager](https://github.com/ugo-emekauwa/hx-api-token-manager)
+
 ## Author:
 Ugo Emekauwa
 
