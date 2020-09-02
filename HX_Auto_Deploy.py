@@ -225,7 +225,7 @@ variable_dictionary = (
    "Expected Type": str,
    "Supplemental Type": None,
    "Restricted Value": None,
-   "Example Value": "4.0(2c)",
+   "Example Value": 'a string such as "4.0(2c)".',
    "Max Length": None,
    "Required Character": None,
    },
