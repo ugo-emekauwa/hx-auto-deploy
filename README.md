@@ -82,7 +82,7 @@ Here are a few of the new features:
 
     **(a).** Open the HX_Auto_Deploy.py file in an IDLE or text editor of choice.
     
-    **(b).** Find the comment `# MODULE REQUIREMENT 2 #`.
+    **(b).** Find the comment **`# MODULE REQUIREMENT 2 #`**.
     
       ![Figure 11 - MODULE REQUIREMENT 2 location](./assets/Figure_11_MODULE_REQUIREMENT_2_location.png "Figure 11 - MODULE REQUIREMENT 2 location")
       
@@ -98,15 +98,14 @@ Here are a few of the new features:
 
     **(a).** Open the HX_Auto_Deploy.py file in an IDLE or text editor of choice.
 
-    **(b).** Find the comment `# MODULE REQUIREMENT 3 #`.
+    **(b).** Find the comment **`# MODULE REQUIREMENT 3 #`**.
       ![Figure 13 - MODULE REQUIREMENT 3 location](./assets/Figure_13_MODULE_REQUIREMENT_3_location.png "Figure 13 - MODULE REQUIREMENT 3 location")
       
-    **(c).** Underneath, you will find the instructions to edit the HyperFlex configuration variable values to match your environment. Each variable has a sample value for ease of use. The variable values to edit begin under the comment, 
-    **`####### Start Configuration Settings - Provide values for the variables listed below. #######`**.
+    **(c).** Underneath, you will find the instructions to edit the HyperFlex configuration variable values to match your environment. Each variable has a sample value for ease of use. The variable values to edit begin under the comment **`####### Start Configuration Settings - Provide values for the variables listed below. #######`**.
       
      ![Figure 14 - Start Configuration Settings location](./assets/Figure_14_Start_Configuration_Settings_location.png "Figure 14 - Start Configuration Settings location")
    
-    Completion of editing the HyperFlex configuration variable values is marked by the comment `####### Finish Configuration Settings - The required value entries are complete. #######`.
+    Completion of editing the HyperFlex configuration variable values is marked by the comment **`####### Finish Configuration Settings - The required value entries are complete. #######`**.
       
       ![Figure 15 - Finish Configuration Settings location](./assets/Figure_15_Finish_Configuration_Settings_location.png "Figure 15 - Finish Configuration Settings location")
       
