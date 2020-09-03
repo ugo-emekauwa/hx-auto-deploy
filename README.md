@@ -109,7 +109,7 @@ Here are a few of the new features:
       
       ![Figure 15 - Finish Configuration Settings location](./assets/Figure_15_Finish_Configuration_Settings_location.png "Figure 15 - Finish Configuration Settings location")
 5. Save the changes you have made to the HX_Auto_Deploy.py file.
-6. Run the HX_Auto_Deploy.py file. Upon a successful deployment, the HX Auto Deploy Tool will inform you that your new HyperFlex cluster profile has been deployed.
+6. Run the HX_Auto_Deploy.py file. Upon a successful deployment, the **HX Auto Deploy Tool** will inform you that your new HyperFlex cluster profile has been deployed.
 ![Figure 16 - Completed HX_Auto_Deploy.py file execution](./assets/Figure_16_Completed_HX_Auto_Deploy.py_file_execution.png "Figure 16 - Completed HX_Auto_Deploy.py file execution")
 7. Once the **HX Auto Deploy Tool** has completed running, you can login to the Intersight GUI to see the HyperFlex Edge cluster profile created and in a state of deployment in the **CONFIGURE/Profiles** section.
 ![Figure 17 - HyperFlex Cluster Profile Configuring state](./assets/Figure_17_HyperFlex_Cluster_Profile_Configuring_state.png "Figure 17 - HyperFlex Cluster Profile Configuring state")
