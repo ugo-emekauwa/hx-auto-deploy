@@ -58,28 +58,27 @@ Here are a few of the new features:
       ![Figure 7 - Copy and save the API key data](./assets/Figure_7_Copy_and_save_the_API_key_data.png "Figure 7 - Copy and save the API key data")
       
 6. Gather the CIMC/KVM IP address or serial number of the servers registered with Intersight that you plan on using in your HyperFlex Edge cluster. You can login to the Intersight GUI and find this information in the **ADMIN/Devices** section under the **Device IP** and **Device ID** columns. HyperFlex Edge with Intersight currently supports 2, 3 or 4 server node clusters.
-
 ![Figure 8 - Gather the server attributes](./assets/Figure_8_Gather_the_server_attributes.png "Figure 8 - Gather the server attributes")
 
 ## How to Use:
 1. Please ensure that the above [**Prerequisites**](https://github.com/ugo-emekauwa/hx-auto-deploy#prerequisites) have been met.
-2. Edit the HX_Auto_Deploy.py file to set the **key_id** variable using the following instructions:
+2. Edit the HX_Auto_Deploy.py file to set the **`key_id`** variable using the following instructions:
 
     **(a).** Open the HX_Auto_Deploy.py file in an IDLE or text editor of choice.
     
-    **(b).** Find the comment `# MODULE REQUIREMENT 1 #`.
+    **(b).** Find the comment **`# MODULE REQUIREMENT 1 #`**.
      
       ![Figure 9 - MODULE REQUIREMENT 1 location](./assets/Figure_9_MODULE_REQUIREMENT_1_location.png "Figure 9 - MODULE REQUIREMENT 1 location")
       
-    **(c).** Underneath, you will find the variable **key_id = ""**. The variable is currently empty.
+    **(c).** Underneath, you will find the variable **`key_id = ""`**. The variable is currently empty.
     
       ![Figure 10 - key_id variable location](./assets/Figure_10_key_id_variable_location.png "Figure 10 - key_id variable location")
       
-    **(d).** Fill in between the quotes of the **key_id** variable value with the ID of your API key. For example:
+    **(d).** Fill in between the quotes of the **`key_id`** variable value with the ID of your API key. For example:
       ```py
       key_id = "5c89885075646127773ec143/5c82fc477577712d3088eb2f/5c8987b17577712d302eaaff"
       ```
-3. Edit the HX_Auto_Deploy.py file to set the **key** variable using the following instructions:
+3. Edit the HX_Auto_Deploy.py file to set the **`key`** variable using the following instructions:
 
     **(a).** Open the HX_Auto_Deploy.py file in an IDLE or text editor of choice.
     
@@ -87,11 +86,11 @@ Here are a few of the new features:
     
       ![Figure 11 - MODULE REQUIREMENT 2 location](./assets/Figure_11_MODULE_REQUIREMENT_2_location.png "Figure 11 - MODULE REQUIREMENT 2 location")
       
-    **(c).** Underneath, you will find the variable **key = ""**. The variable is currently empty.
+    **(c).** Underneath, you will find the variable **`key = ""`**. The variable is currently empty.
     
       ![Figure 12 - key variable location](./assets/Figure_12_key_variable_location.png "Figure 12 - key variable location")
       
-    **(d).** Fill in between the quotes of the **key** variable value with your system's file path to the SecretKey.txt file for your API key. For example:
+    **(d).** Fill in between the quotes of the **`key`** variable value with your system's file path to the SecretKey.txt file for your API key. For example:
       ```py
       key = "C:\\Keys\\Key1\\SecretKey.txt"
       ```
@@ -102,7 +101,8 @@ Here are a few of the new features:
     **(b).** Find the comment `# MODULE REQUIREMENT 3 #`.
       ![Figure 13 - MODULE REQUIREMENT 3 location](./assets/Figure_13_MODULE_REQUIREMENT_3_location.png "Figure 13 - MODULE REQUIREMENT 3 location")
       
-    **(c).** Underneath, you will find the instructions to edit the HyperFlex configuration variable values to match your environment. Each variable has a sample value for ease of use. The variable values to edit begin under the comment `####### Start Configuration Settings - Provide values for the variables listed below. #######`.
+    **(c).** Underneath, you will find the instructions to edit the HyperFlex configuration variable values to match your environment. Each variable has a sample value for ease of use. The variable values to edit begin under the comment, 
+    **`####### Start Configuration Settings - Provide values for the variables listed below. #######`**.
       
      ![Figure 14 - Start Configuration Settings location](./assets/Figure_14_Start_Configuration_Settings_location.png "Figure 14 - Start Configuration Settings location")
    
