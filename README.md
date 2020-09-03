@@ -56,7 +56,6 @@ Here are a few of the new features:
     **(g).** In the Generate API Key window, a new API key will be generated. Copy the API Key ID and download the Secret Key to a secure location.
     
       ![Figure 7 - Copy and save the API key data](./assets/Figure_7_Copy_and_save_the_API_key_data.png "Figure 7 - Copy and save the API key data")
-      
 6. Gather the CIMC/KVM IP address or serial number of the servers registered with Intersight that you plan on using in your HyperFlex Edge cluster. You can login to the Intersight GUI and find this information in the **ADMIN/Devices** section under the **Device IP** and **Device ID** columns. HyperFlex Edge with Intersight currently supports 2, 3 or 4 server node clusters.
 ![Figure 8 - Gather the server attributes](./assets/Figure_8_Gather_the_server_attributes.png "Figure 8 - Gather the server attributes")
 
@@ -109,7 +108,6 @@ Here are a few of the new features:
     Completion of editing the HyperFlex configuration variable values is marked by the comment **`####### Finish Configuration Settings - The required value entries are complete. #######`**.
       
       ![Figure 15 - Finish Configuration Settings location](./assets/Figure_15_Finish_Configuration_Settings_location.png "Figure 15 - Finish Configuration Settings location")
-      
 5. Save the changes you have made to the HX_Auto_Deploy.py file.
 6. Run the HX_Auto_Deploy.py file. Upon a successful deployment, the HX Auto Deploy Tool will inform you that your new HyperFlex cluster profile has been deployed.
 ![Figure 16 - Completed HX_Auto_Deploy.py file execution](./assets/Figure_16_Completed_HX_Auto_Deploy.py_file_execution.png "Figure 16 - Completed HX_Auto_Deploy.py file execution")
