@@ -70,7 +70,7 @@ Here are a few of the new features:
      
       ![Figure 9 - MODULE REQUIREMENT 1 location](./assets/Figure_9_MODULE_REQUIREMENT_1_location.png "Figure 9 - MODULE REQUIREMENT 1 location")
       
-    **(c).** Underneath, you will find the variable **`key_id = ""`**. The variable is currently empty.
+    **(c).** Underneath, you will find the variable **`key_id`**. The variable is currently empty.
     
       ![Figure 10 - key_id variable location](./assets/Figure_10_key_id_variable_location.png "Figure 10 - key_id variable location")
       
@@ -86,7 +86,7 @@ Here are a few of the new features:
     
       ![Figure 11 - MODULE REQUIREMENT 2 location](./assets/Figure_11_MODULE_REQUIREMENT_2_location.png "Figure 11 - MODULE REQUIREMENT 2 location")
       
-    **(c).** Underneath, you will find the variable **`key = ""`**. The variable is currently empty.
+    **(c).** Underneath, you will find the variable **`key`**. The variable is currently empty.
     
       ![Figure 12 - key variable location](./assets/Figure_12_key_variable_location.png "Figure 12 - key variable location")
       
@@ -99,6 +99,7 @@ Here are a few of the new features:
     **(a).** Open the HX_Auto_Deploy.py file in an IDLE or text editor of choice.
 
     **(b).** Find the comment **`# MODULE REQUIREMENT 3 #`**.
+    
       ![Figure 13 - MODULE REQUIREMENT 3 location](./assets/Figure_13_MODULE_REQUIREMENT_3_location.png "Figure 13 - MODULE REQUIREMENT 3 location")
       
     **(c).** Underneath, you will find the instructions to edit the HyperFlex configuration variable values to match your environment. Each variable has a sample value for ease of use. The variable values to edit begin under the comment **`####### Start Configuration Settings - Provide values for the variables listed below. #######`**.
@@ -110,7 +111,7 @@ Here are a few of the new features:
       ![Figure 15 - Finish Configuration Settings location](./assets/Figure_15_Finish_Configuration_Settings_location.png "Figure 15 - Finish Configuration Settings location")
       
 5. Save the changes you have made to the HX_Auto_Deploy.py file.
-6. Run the HX_Auto_Deploy.py file. Upon a successful deployment the HX Auto Deploty Tool will porint a success message.
+6. Run the HX_Auto_Deploy.py file. Upon a successful deployment, the HX Auto Deploy Tool will complete informing you that the new HyperFlex cluster profile has been deployed.
 ![Figure 16 - Completed HX_Auto_Deploy.py file execution](./assets/Figure_16_Completed_HX_Auto_Deploy.py_file_execution.png "Figure 16 - Completed HX_Auto_Deploy.py file execution")
 7. Once the **HX Auto Deploy Tool** has completed running, you can login to the Intersight GUI to see the HyperFlex Edge cluster profile created and in a state of deployment in the **CONFIGURE/Profiles** section.
 ![Figure 17 - HyperFlex Cluster Profile Configuring state](./assets/Figure_17_HyperFlex_Cluster_Profile_Configuring_state.png "Figure 17 - HyperFlex Cluster Profile Configuring state")
