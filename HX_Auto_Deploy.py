@@ -1610,7 +1610,7 @@ for index, (hx_node_attribute, esxi_mgmt_ip, storage_controller_vm_ip) in enumer
       "Name": f"{esxi_hostname_prefix}-{index}",
       "HxdpMgmtIp": storage_controller_vm_ip,
       "HypervisorMgmtIp": esxi_mgmt_ip,
-      "AssignedServer": {"Moid": hx_node_attribute_moid_dictionary[hx_node_attribute]},
+      "AssignedServer": {"Moid": hx_node_attribute_moid_dictionary[hx_node_attribute], "ObjectType": "compute.RackUnit"},
       "ClusterProfile": {"Moid": hx_cluster_profile_moid}
       }
      }
