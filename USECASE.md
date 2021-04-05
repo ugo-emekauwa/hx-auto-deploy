@@ -1,4 +1,4 @@
-# Use Cases for HyperFlex Edge Automated Deployment Tool for Cisco Intersight
+# HyperFlex Edge Automated Deployment Tool for Cisco Intersight - Use Cases
 
 The Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy) for Cisco Intersight enables automated deployment of HyperFlex Edge cluster installations through the Intersight API.
 
