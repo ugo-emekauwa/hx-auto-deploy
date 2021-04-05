@@ -57,7 +57,7 @@ Here are a few of the new features:
     
       ![Figure 7 - Copy and save the API key data](./assets/Figure_7_Copy_and_save_the_API_key_data.png "Figure 7 - Copy and save the API key data")
 6. Gather the CIMC/KVM IP address or serial number of the servers registered with Intersight that you plan on using in your HyperFlex Edge cluster. You can login to the Intersight GUI and find this information in the **ADMIN/Devices** section under the **Device IP** and **Device ID** columns. HyperFlex Edge with Intersight currently supports 2, 3 or 4 server node clusters.
-![Figure 8 - Gather the server attributes](./assets/Figure_8_Gather_the_server_attributes.png "Figure 8 - Gather the server attributes")
+    ![Figure 8 - Gather the server attributes](./assets/Figure_8_Gather_the_server_attributes.png "Figure 8 - Gather the server attributes")
 
 ## How to Use:
 1. Please ensure that the above [**Prerequisites**](https://github.com/ugo-emekauwa/hx-auto-deploy#prerequisites) have been met.
@@ -110,9 +110,9 @@ Here are a few of the new features:
       ![Figure 15 - Finish Configuration Settings location](./assets/Figure_15_Finish_Configuration_Settings_location.png "Figure 15 - Finish Configuration Settings location")
 5. Save the changes you have made to the HX_Auto_Deploy.py file.
 6. Run the HX_Auto_Deploy.py file. Upon a successful deployment, the **HX Auto Deploy Tool** will inform you that the new HyperFlex cluster profile has been deployed.
-  ![Figure 16 - Completed HX_Auto_Deploy.py file execution](./assets/Figure_16_Completed_HX_Auto_Deploy.py_file_execution.png "Figure 16 - Completed HX_Auto_Deploy.py file execution")
+    ![Figure 16 - Completed HX_Auto_Deploy.py file execution](./assets/Figure_16_Completed_HX_Auto_Deploy.py_file_execution.png "Figure 16 - Completed HX_Auto_Deploy.py file execution")
 7. Once the **HX Auto Deploy Tool** has completed running, you can login to the Intersight GUI to see the HyperFlex Edge cluster profile created and in a state of deployment in the **CONFIGURE/Profiles** section.
-  ![Figure 17 - HyperFlex Cluster Profile Configuring state](./assets/Figure_17_HyperFlex_Cluster_Profile_Configuring_state.png "Figure 17 - HyperFlex Cluster Profile Configuring state")
+    ![Figure 17 - HyperFlex Cluster Profile Configuring state](./assets/Figure_17_HyperFlex_Cluster_Profile_Configuring_state.png "Figure 17 - HyperFlex Cluster Profile Configuring state")
 
 The **HyperFlex Notification Tool** available on GitHub at [https://github.com/ugo-emekauwa/hyperflex-notification-tool](https://github.com/ugo-emekauwa/hyperflex-notification-tool) can be used to receive automated updates on the status of the HyperFlex Edge deployment.
 
