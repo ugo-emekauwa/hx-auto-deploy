@@ -904,7 +904,7 @@ else:
   hx_mac_prefix_address_post_uplink_speed_checked = f"00:25:B5:{hx_mac_prefix_address}"
 
 # Define Intersight SDK IntersightApiClient variables
-# Tested on Cisco Intersight API Reference v1.0.9-2110
+# Tested on Cisco Intersight API Reference v1.0.9-4246
 base_url = "https://intersight.com/api/v1"
 api_instance = IntersightApiClient(host=base_url,private_key=key,api_key_id=key_id)
 
