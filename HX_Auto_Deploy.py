@@ -56,7 +56,7 @@ the list either the CIMC/KVM IP address or the serial number of the registered
 servers in the desired cluster order. Within the Intersight GUI, in the
 'ADMIN/Devices' section of the navigation pane, the CIMC/KVM IP address is
 under the column 'Device IP', and the serial number is under the
-column 'Device ID'. The amount of entries in the
+column 'Device ID'. The number of entries in the
 hx_node_attribute_list variable list must match the provided cluster size
 number for the hx_cluster_size variable.  
 
@@ -921,7 +921,7 @@ def test_intersight_service():
           "account information...")
     check_account = intersight.IamAccountApi(api_instance)
     get_account = check_account.iam_accounts_get()
-    if check_account.api_client.last_response.status is not 200:
+    if check_account.api_client.last_response.status != 200:
       print("The Intersight API and Account Availability Test did not pass.")
       print("The Intersight account information could not be verified.")
       print("Exiting due to the Intersight account being unavailable.\n")
@@ -945,7 +945,7 @@ def test_intersight_service():
     sys.exit(0)
 
 
-# Establish Intersight Universal Functions
+# Establish Intersight Universal Function
 def iu_get(api_path):
     """This is a function to perform a universal or generic GET on objects
     under available Intersight API types, including those not yet defined in
