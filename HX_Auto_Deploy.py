@@ -1,5 +1,5 @@
 """
-Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy), v2.1
+Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy), v2.2
 Author: Ugo Emekauwa
 Contact: uemekauw@cisco.com, uemekauwa@gmail.com
 Summary: The Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy)
@@ -166,7 +166,7 @@ import requests
 import intersight
 from intersight.intersight_api_client import IntersightApiClient
 
-# Starting the Automated HyperFlex Edge Install Deployment Tool
+# Starting the Cisco HyperFlex Edge Automated Deployment Tool
 print("\nStarting the Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy).\n")
 
 # Establish dictionary for the provided variable values
@@ -886,6 +886,9 @@ if hx_connect_mgmt_ip_address in hx_node_attribute_list:
 # Completion of the preliminary check of the provided variable values
 print("The preliminary check of the provided variable values is complete.\n")
 
+# Set the Deployment Tool Type
+maker_type = "Cisco HyperFlex Edge Automated Deployment Tool"
+
 # Set the HyperFlex Management Deployment Type
 hx_mgmt_platform_type = "EDGE"
 
@@ -905,6 +908,7 @@ else:
 
 # Define Intersight SDK IntersightApiClient variables
 # Tested on Cisco Intersight API Reference v1.0.9-4246
+## NOTE - If using an Intersight appliance, change the base_url variable to the matching FQDN.
 base_url = "https://intersight.com/api/v1"
 api_instance = IntersightApiClient(host=base_url,private_key=key,api_key_id=key_id)
 
@@ -1043,8 +1047,6 @@ intersight_api_test = test_intersight_service()
 intersight_account_name = intersight_api_test
 
 # Retrieve the Organization for the HyperFlex Cluster Profile and Policies
-print("Retrieving the HyperFlex Cluster Profile Organization...")
-
 hx_policy_org_moid = intersight_object_retriever(hx_organization,
                                                  "Organization",
                                                  "organization/Organizations")
@@ -1313,34 +1315,10 @@ else:
     sys.exit(0)
 
 # Retrieve the HyperFlex Software Version Policy
-print("Retrieving the HyperFlex Software Version Policy...")
-
-try:
-  get_hx_software_version_policy = hx_software_version_policy.hyperflex_software_version_policies_get()
-  get_hx_software_version_policy_dict = get_hx_software_version_policy.to_dict()
-except Exception as exception_message:
-  print("There was an issue retrieving the "
-        "HyperFlex Software Version Policy.")
-  print("Please review and resolve any error messages then restart "
-        "the HX Auto Deploy Tool.\n")
-  print(exception_message)
-  sys.exit(0)
-  
-if get_hx_software_version_policy_dict["results"] is not None:
-  for policy in get_hx_software_version_policy_dict["results"]:
-    if policy["name"] == hx_software_version_policy_name:
-      hx_software_version_policy_moid = policy["moid"]
-      print("The required HyperFlex Software Version Policy named "
-            f"{hx_software_version_policy_name} with the MOID of "
-            f"{hx_software_version_policy_moid} has been identified "
-            "and retrieved.\n")
-else:
-  print("The required HyperFlex Software Version Policy named "
-        f"{hx_software_version_policy_name} was not found.")
-  print(f"Please check the Intersight Account named {intersight_account_name} "
-        "through the GUI and verify that the needed resources are present.")
-  print("Exiting the HX Auto Deploy Tool.\n")
-  sys.exit(0)
+hx_software_version_policy_moid = intersight_object_retriever(hx_software_version_policy_name,
+                                                              "HyperFlex Software Version Policy",
+                                                              "hyperflex/SoftwareVersionPolicies",
+                                                              hx_organization)
 
 # Retrieve available rack servers
 print("Retrieving the available rack unit servers...")
@@ -1412,190 +1390,41 @@ for hx_node_attribute in hx_node_attribute_list:
     sys.exit(0)
       
 # Retrieve the HyperFlex Local Credential Policy for the Cluster Configuration "Security" policy type settings
-print("Retrieving the HyperFlex Local Credential Policy...")
+hx_local_credential_policy_moid = intersight_object_retriever(f"{hx_policy_name_prefix}-local-credential-policy",
+                                                              "HyperFlex Local Credential Policy",
+                                                              "hyperflex/LocalCredentialPolicies",
+                                                              hx_organization)
 
-try:
-  hx_local_credential_policy = intersight.HyperflexLocalCredentialPolicyApi(api_instance)
-  get_hx_local_credential_policy = hx_local_credential_policy.hyperflex_local_credential_policies_get()
-  get_hx_local_credential_policy_dict = get_hx_local_credential_policy.to_dict()
-except Exception as exception_message:
-  print("There was an issue retrieving the "
-        "HyperFlex Local Credential Policy.")
-  print("Please review and resolve any error messages then restart "
-        "the HX Auto Deploy Tool.\n")
-  print(exception_message)
-  sys.exit(0)
-
-if get_hx_local_credential_policy_dict["results"] is not None:
-  for policy in get_hx_local_credential_policy_dict["results"]:
-    if policy["name"] == f"{hx_policy_name_prefix}-local-credential-policy":
-      hx_local_credential_policy_moid = policy["moid"]
-      print("The required HyperFlex Local Credential Policy named "
-            f"{hx_policy_name_prefix}-local-credential-policy with the MOID of "
-            f"{hx_local_credential_policy_moid} has been identified "
-            "and retrieved.\n")
-else:
-  print("The required HyperFlex Local Credential Policy named "
-        f"{hx_policy_name_prefix}-local-credential-policy was not found.")
-  print(f"Please check the Intersight Account named {intersight_account_name} "
-        "through the GUI and verify that the needed resources are present.")
-  print("Exiting the HX Auto Deploy Tool.\n")
-  sys.exit(0)
 
 # Retrieve the HyperFlex System Configuration Policy for the Cluster Configuration "DNS, NTP, and Timezone" policy type settings
-print("Retrieving the HyperFlex System Configuration Policy...")
-
-try:
-  hx_sys_config_policy = intersight.HyperflexSysConfigPolicyApi(api_instance)
-  get_hx_sys_config_policy = hx_sys_config_policy.hyperflex_sys_config_policies_get()
-  get_hx_sys_config_policy_dict = get_hx_sys_config_policy.to_dict()
-except Exception as exception_message:
-  print("There was an issue retrieving the "
-        "HyperFlex System Configuration Policy.")
-  print("Please review and resolve any error messages then restart "
-        "the HX Auto Deploy Tool.\n")
-  print(exception_message)
-  sys.exit(0)
-
-if get_hx_sys_config_policy_dict["results"] is not None:
-  for policy in get_hx_sys_config_policy_dict["results"]:
-    if policy["name"] == f"{hx_policy_name_prefix}-sys-config-policy":
-      hx_sys_config_policy_moid = policy["moid"]
-      print("The required HyperFlex System Configuration Policy named "
-            f"{hx_policy_name_prefix}-sys-config-policy with the MOID of "
-            f"{hx_sys_config_policy_moid} has been identified "
-            "and retrieved.\n")
-else:
-  print("The required HyperFlex System Configuration Policy named "
-        f"{hx_policy_name_prefix}-sys-config-policy was not found.")
-  print(f"Please check the Intersight Account named {intersight_account_name} "
-        "through the GUI and verify that the needed resources are present.")
-  print("Exiting the HX Auto Deploy Tool.\n")
-  sys.exit(0)
+hx_sys_config_policy_moid = intersight_object_retriever(f"{hx_policy_name_prefix}-sys-config-policy",
+                                                        "HyperFlex System Configuration Policy",
+                                                        "hyperflex/SysConfigPolicies",
+                                                        hx_organization)
 
 # Retrieve the HyperFlex VMware vCenter Configuration Policy for the Cluster Configuration "vCenter (Optional)" policy type settings
-print("Retrieving the HyperFlex VMware vCenter Configuration Policy...")
-
-try:
-  hx_vcenter_config_policy = intersight.HyperflexVcenterConfigPolicyApi(api_instance)
-  get_hx_vcenter_config_policy = hx_vcenter_config_policy.hyperflex_vcenter_config_policies_get()
-  get_hx_vcenter_config_policy_dict = get_hx_vcenter_config_policy.to_dict()
-except Exception as exception_message:
-  print("There was an issue retrieving the "
-        "HyperFlex VMware vCenter Configuration Policy.")
-  print("Please review and resolve any error messages then restart "
-        "the HX Auto Deploy Tool.\n")
-  print(exception_message)
-  sys.exit(0)
-
-if get_hx_vcenter_config_policy_dict["results"] is not None:
-  for policy in get_hx_vcenter_config_policy_dict["results"]:
-    if policy["name"] == f"{hx_policy_name_prefix}-vcenter-config-policy":
-      hx_vcenter_config_policy_moid = policy["moid"]
-      print("The required HyperFlex VMware vCenter Configuration Policy named "
-            f"{hx_policy_name_prefix}-vcenter-config-policy with the MOID of "
-            f"{hx_vcenter_config_policy_moid} has been identified "
-            "and retrieved.\n")
-else:
-  print("The required HyperFlex VMware vCenter Configuration Policy named "
-        f"{hx_policy_name_prefix}-vcenter-config-policy was not found.")
-  print(f"Please check the Intersight Account named {intersight_account_name} "
-        "through the GUI and verify that the needed resources are present.")
-  print("Exiting the HX Auto Deploy Tool.\n")
-  sys.exit(0)
+hx_vcenter_config_policy_moid = intersight_object_retriever(f"{hx_policy_name_prefix}-vcenter-config-policy",
+                                                            "HyperFlex VMware vCenter Configuration Policy",
+                                                            "hyperflex/VcenterConfigPolicies",
+                                                            hx_organization)
 
 # Retrieve the HyperFlex Cluster Storage Configuration Policy for the Cluster Configuration "Storage Configuration (Optional)" policy type settings
-print("Retrieving the HyperFlex Cluster Storage Configuration Policy...")
-
-try:
-  hx_cluster_storage_policy = intersight.HyperflexClusterStoragePolicyApi(api_instance)
-  get_hx_cluster_storage_policy = hx_cluster_storage_policy.hyperflex_cluster_storage_policies_get()
-  get_hx_cluster_storage_policy_dict = get_hx_cluster_storage_policy.to_dict()
-except Exception as exception_message:
-  print("There was an issue retrieving the "
-        "HyperFlex Cluster Storage Configuration Policy.")
-  print("Please review and resolve any error messages then restart "
-        "the HX Auto Deploy Tool.\n")
-  print(exception_message)
-  sys.exit(0)
-
-if get_hx_cluster_storage_policy_dict["results"] is not None:
-  for policy in get_hx_cluster_storage_policy_dict["results"]:
-    if policy["name"] == f"{hx_policy_name_prefix}-cluster-storage-policy":
-      hx_cluster_storage_policy_moid = policy["moid"]
-      print("The required HyperFlex Cluster Storage Configuration Policy "
-            f"named {hx_policy_name_prefix}-cluster-storage-policy with the "
-            f"MOID of {hx_cluster_storage_policy_moid} has been identified "
-            "and retrieved.\n")
-else:
-  print("The required HyperFlex Cluster Storage Configuration Policy named "
-        f"{hx_policy_name_prefix}-cluster-storage-policy was not found.")
-  print(f"Please check the Intersight Account named {intersight_account_name} "
-        "through the GUI and verify that the needed resources are present.")
-  print("Exiting the HX Auto Deploy Tool.\n")
-  sys.exit(0)
+hx_cluster_storage_policy_moid = intersight_object_retriever(f"{hx_policy_name_prefix}-cluster-storage-policy",
+                                                             "HyperFlex Cluster Storage Configuration Policy",
+                                                             "hyperflex/ClusterStoragePolicies",
+                                                             hx_organization)
 
 # Retrieve the HyperFlex Node Configuration Policy for the Cluster Configuration "IP & Hostname" policy type settings
-print("Retrieving the HyperFlex Node Configuration Policy...")
-
-try:
-  hx_node_config_policy = intersight.HyperflexNodeConfigPolicyApi(api_instance)
-  get_hx_node_config_policy = hx_node_config_policy.hyperflex_node_config_policies_get()
-  get_hx_node_config_policy_dict = get_hx_node_config_policy.to_dict()
-except Exception as exception_message:
-  print("There was an issue retrieving the "
-        "HyperFlex Node Configuration Policy.")
-  print("Please review and resolve any error messages then restart "
-        "the HX Auto Deploy Tool.\n")
-  print(exception_message)
-  sys.exit(0)
-
-if get_hx_node_config_policy_dict["results"] is not None:
-  for policy in get_hx_node_config_policy_dict["results"]:
-    if policy["name"] == f"{hx_policy_name_prefix}-node-config-policy":
-      hx_node_config_policy_moid = policy["moid"]
-      print("The required HyperFlex Node Configuration Policy named "
-            f"{hx_policy_name_prefix}-node-config-policy with the MOID of "
-            f"{hx_node_config_policy_moid} has been identified "
-            "and retrieved.\n")
-else:
-  print("The required HyperFlex Node Configuration Policy named "
-        f"{hx_policy_name_prefix}-node-config-policy was not found.")
-  print(f"Please check the Intersight Account named {intersight_account_name} "
-        "through the GUI and verify that the needed resources are present.")
-  print("Exiting the HX Auto Deploy Tool.\n")
-  sys.exit(0)
+hx_node_config_policy_moid = intersight_object_retriever(f"{hx_policy_name_prefix}-node-config-policy",
+                                                         "HyperFlex Node Configuration Policy",
+                                                         "hyperflex/NodeConfigPolicies",
+                                                         hx_organization)
 
 # Retrieve the HyperFlex Cluster Network Configuration Policy for the Cluster Configuration "Network Configuration" policy type settings
-print("Retrieving the HyperFlex Cluster Network Configuration Policy...")
-
-try:
-  hx_cluster_network_policy = intersight.HyperflexClusterNetworkPolicyApi(api_instance)
-  get_hx_cluster_network_policy = hx_cluster_network_policy.hyperflex_cluster_network_policies_get()
-  get_hx_cluster_network_policy_dict = get_hx_cluster_network_policy.to_dict()
-except Exception as exception_message:
-  print("There was an issue retrieving the "
-        "HyperFlex Cluster Network Configuration Policy.")
-  print("Please review and resolve any error messages then restart "
-        "the HX Auto Deploy Tool.\n")
-  print(exception_message)
-  sys.exit(0)
-
-if get_hx_cluster_network_policy_dict["results"] is not None:
-  for policy in get_hx_cluster_network_policy_dict["results"]:
-    if policy["name"] == f"{hx_policy_name_prefix}-cluster-network-policy":
-      hx_cluster_network_policy_moid = policy["moid"]
-      print("The required HyperFlex Cluster Network Configuration Policy named "
-            f"{hx_policy_name_prefix}-cluster-network-policy with the MOID of "
-            f"{hx_cluster_network_policy_moid} has been identified "
-            "and retrieved.\n")
-else:
-  print("The required HyperFlex Cluster Network Configuration Policy named "
-        f"{hx_policy_name_prefix}-cluster-network-policy was not found.")
-  print(f"Please check the Intersight Account named {intersight_account_name} "
-        "through the GUI and verify that the needed resources are present.")
-  print("Exiting the HX Auto Deploy Tool.\n")
-  sys.exit(0)
+hx_cluster_network_policy_moid = intersight_object_retriever(f"{hx_policy_name_prefix}-cluster-network-policy",
+                                                             "HyperFlex Cluster Network Configuration Policy",
+                                                             "hyperflex/ClusterNetworkPolicies",
+                                                             hx_organization)
 
 # Create the HyperFlex Cluster Profile
 print("Attempting to create a new HyperFlex Cluster Profile...")
@@ -1689,33 +1518,10 @@ else:
     sys.exit(0)
 
 # Retrieve the HyperFlex Cluster Profile
-print("Retrieving the HyperFlex Cluster Profile...")
-
-try:
-  get_hx_cluster_profile = hx_cluster_profile.hyperflex_cluster_profiles_get()
-  get_hx_cluster_profile_dict = get_hx_cluster_profile.to_dict()
-except Exception as exception_message:
-  print("There was an issue retrieving the HyperFlex Cluster Profile.")
-  print("Please review and resolve any error messages then restart "
-        "the HX Auto Deploy Tool.\n")
-  print(exception_message)
-  sys.exit(0)
-
-if get_hx_cluster_profile_dict["results"] is not None:
-  for profile in get_hx_cluster_profile_dict["results"]:
-    if profile["name"] == hx_cluster_profile_name:
-      hx_cluster_profile_moid = profile["moid"]
-      print("The required HyperFlex Cluster Profile named "
-            f"{hx_cluster_profile_name} with the MOID of "
-            f"{hx_cluster_profile_moid} has been identified "
-            "and retrieved.\n")
-else:
-  print("The required HyperFlex Cluster Profile named "
-        f"{hx_cluster_profile_name} was not found.")
-  print(f"Please check the Intersight Account named {intersight_account_name} "
-        "through the GUI and verify that the needed resources are present.")
-  print("Exiting the HX Auto Deploy Tool.\n")
-  sys.exit(0)
+hx_cluster_profile_moid = intersight_object_retriever(hx_cluster_profile_name,
+                                                      "HyperFlex Cluster Profile",
+                                                      "hyperflex/ClusterProfiles",
+                                                      hx_organization)
 
 # Create the HyperFlex Node Profiles
 print("Attempting to create new HyperFlex Node Profiles...")
