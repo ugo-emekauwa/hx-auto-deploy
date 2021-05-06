@@ -949,78 +949,44 @@ def test_intersight_service():
     sys.exit(0)
 
 
-# Establish Intersight Universal Function
-def iu_get(api_path):
-    """This is a function to perform a universal or generic GET on objects
-    under available Intersight API types, including those not yet defined in
-    the Intersight SDK for Python. An argument for the API type path is
-    required.
-
-    Args:
-        api_path: The path to the targeted Intersight API type. For example, to
-        specify the Intersight API type for adapter configuration policies,
-        enter "adapter/ConfigPolicies". More API types can be found in the
-        Intersight API reference library at
-        https://intersight.com/apidocs/introduction/overview/.
-
-    Returns:
-        A dictionary containing all objects of the specified API type. If the
-        API type is inaccessible, an implicit value of None will be returned.
-    """
-    full_resource_path = f"/{api_path}"
-    try:
-        api_instance.call_api(full_resource_path,"GET")
-        response = api_instance.last_response.data
-        results = json.loads(response)
-        print(f"The API resource path '{api_path}' has been accessed "
-              "successfully.")
-        return results
-    except Exception as exception_message:
-        print(f"Unable to access the API resource path '{api_path}'.\n")
-        print("Exception Message: ")
-        traceback.print_exc()
-
-
 # Establish function to retrieve Intersight API objects
 def intersight_object_retriever(object_name, object_type, intersight_api_path, org="default"):
-    """This is a function to retrieve named objects created under an Intersight
-    account using the Intersight API.
+    """This is a function to retrieve named Intersight objects
+    using the Intersight API.
     """
-    print(f"Retrieving the provided {object_type} named '{object_name}' "
-          "from Intersight...")
-
+    # Retrieving the provided object from Intersight...
+    full_intersight_api_path = f"/{intersight_api_path}"
     try:
-        get_intersight_objects = iu_get(intersight_api_path)
-    except Exception as exception_message:
+        api_instance.call_api(full_intersight_api_path,"GET")
+        response = api_instance.last_response.data
+        results = json.loads(response)
+        # The Intersight API resource path has been accessed successfully.
+        get_intersight_objects = results
+    except Exception:
         print("There was an issue retrieving the "
               f"{object_type} from Intersight.")
+        print(f"Unable to access the provided Intersight API resource path '{intersight_api_path}'.")
         print("Please review and resolve any error messages then restart "
               f"the {maker_type}.\n")
-        print(exception_message)
+        print("Exception Message: ")
+        traceback.print_exc()
         sys.exit(0)
 
-    if get_intersight_objects["Results"]:
-        for intersight_object in get_intersight_objects["Results"]:
+    if get_intersight_objects.get("Results"):
+        for intersight_object in get_intersight_objects.get("Results"):
             if intersight_object.get("Organization"):
-                print("The provided object is part of an Intersight Account Organization.")
                 provided_org_moid = intersight_object_retriever(org,
                                                                 "Organization",
                                                                 "organization/Organizations")
                 if intersight_object.get("Organization", {}).get("Moid") == provided_org_moid:
                     if intersight_object.get("Name") == object_name:
                         intersight_object_moid = intersight_object.get("Moid")
-                        print(f"The provided {object_type} named "
-                              f"'{object_name}' with the "
-                              f"MOID of {intersight_object_moid} has been "
-                              "identified and retrieved.")
+                        # The provided object and MOID has been identified and retrieved.
                         return intersight_object_moid
             else:
                 if intersight_object.get("Name") == object_name:
                     intersight_object_moid = intersight_object.get("Moid")
-                    print(f"The provided {object_type} named "
-                          f"'{object_name}' with the "
-                          f"MOID of {intersight_object_moid} has been "
-                          "identified and retrieved.")
+                    # The provided object and MOID has been identified and retrieved.
                     return intersight_object_moid
         else:
             print(f"The provided {object_type} named '{object_name}' was not "
@@ -1032,8 +998,9 @@ def intersight_object_retriever(object_name, object_type, intersight_api_path, o
             sys.exit(0)
     else:
         print(f"The provided {object_type} named '{object_name}' was not "
-              f"found. No {object_type} is currently available in the Intersight "
-              "account.")
+              "found.")
+        print(f"No {object_type} is currently available in the Intersight "
+              f"account named {intersight_account_name}.")
         print("Please check the Intersight Account named "
               f"{intersight_account_name} through the GUI and verify that the "
               f"needed {object_type} is present.")
