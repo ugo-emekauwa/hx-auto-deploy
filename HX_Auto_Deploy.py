@@ -1,5 +1,5 @@
 """
-Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy), v2.2
+Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy), v2.3
 Author: Ugo Emekauwa
 Contact: uemekauw@cisco.com, uemekauwa@gmail.com
 Summary: The Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy)
@@ -153,6 +153,8 @@ hx_storage_vlan_id = 100
 hx_connect_mgmt_ip_address = "198.18.135.100"
 hx_mac_prefix_address = "00"
 
+# Intersight Base URL Setting (Change only if using the Intersight Virtual Appliance)
+intersight_base_url = "https://intersight.com/api/v1"
 
 ####### Finish Configuration Settings - The required value entries are complete. #######
 
@@ -906,12 +908,9 @@ if hx_node_uplink_speed == "1G":
 else:
   hx_mac_prefix_address_post_uplink_speed_checked = f"00:25:B5:{hx_mac_prefix_address}"
 
-# Define Intersight SDK IntersightApiClient variables
-# Tested on Cisco Intersight API Reference v1.0.9-4246
-## NOTE - If using an Intersight appliance, change the base_url variable to the matching FQDN.
-base_url = "https://intersight.com/api/v1"
-api_instance = IntersightApiClient(host=base_url,private_key=key,api_key_id=key_id)
-
+# Define Intersight SDK IntersightApiClient variable
+# Last tested on Cisco Intersight API Reference v1.0.9-4246 (SaaS)
+api_instance = IntersightApiClient(host=intersight_base_url, private_key=key, api_key_id=key_id)
 
 # Establish function to test for the availability of the Intersight API and Intersight account
 def test_intersight_service():
