@@ -1,4 +1,4 @@
-<h1 align="center">HyperFlex Edge Automated Deployment Tool for Cisco Intersight</h1>
+# HyperFlex Edge Automated Deployment Tool for Cisco Intersight
 
 <h1 align="center">
   <img alt="HyperFlex Edge with Intersight Image" title="HyperFlex Edge with Intersight" src="./assets/HyperFlex_Edge_with_Cisco_Intersight_Graphic.png">
