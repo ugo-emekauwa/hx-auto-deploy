@@ -1,9 +1,12 @@
-# HyperFlex Edge Automated Deployment Tool for Cisco Intersight
+<h1 align="center">HyperFlex Edge Automated Deployment Tool for Cisco Intersight</h1>
 
-The Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy) for Cisco Intersight enables automated deployment of HyperFlex Edge cluster installations through the Intersight API.
+<h1 align="center">
+  <img alt="HyperFlex Edge with Intersight Image" title="HyperFlex Edge with Intersight" src="./assets/HyperFlex_Edge_with_Cisco_Intersight_Graphic.png">
+</h1>  
 
-HX Auto Deploy is designed to be used in any environment where Cisco HyperFlex Edge clusters need to be deployed. The code and user instructions are available on GitHub at [https://github.com/ugo-emekauwa/hx-auto-deploy](https://github.com/ugo-emekauwa/hx-auto-deploy).
-
+<p align="center">
+  The Cisco HyperFlex Edge Automated Deployment Tool (HX Auto Deploy) for Cisco Intersight enables automated deployment of HyperFlex Edge cluster installations through the Intersight API. HX Auto Deploy is designed to be used in any environment where Cisco HyperFlex Edge clusters need to be deployed. The code and user instructions are available on GitHub at https://github.com/ugo-emekauwa/hx-auto-deploy.
+</p>
 
 ## Demonstrations and Learning Labs:
 The HyperFlex Edge Automated Deployment Tool for Cisco Intersight is featured on Cisco dCloud in the following labs:
