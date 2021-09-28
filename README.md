@@ -11,17 +11,18 @@
 
 [![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/ugo-emekauwa/hx-auto-deploy)
 
-## What's New:
-The **HX Auto Deploy Tool**, which was originally built for Cisco dCloud, has been re-designed and upgraded to work in any environment due to popular demand.
-Here are a few of the new features:
-  - Easily modifiable variable values for use in any environment.
-  - Built-in HyperFlex policy creation and configuration on Intersight.
-  - Dynamic support for all HyperFlex Edge cluster sizes on Intersight.
-  - Advanced error-checking for HyperFlex configuration requirements similar to the Intersight GUI, in order to avoid unnecessary troubleshooting.
-  - Support for setting custom Intersight account organizations and tags.
-  - Support for using the Intersight Virtual Appliance.
+## Features
+- Automatically build a HyperFlex Edge Cluster Profile with all Policies configured to your exact specification. Anything that can be done through the Intersight GUI can be done here!
 
-## Prerequisites:
+- Automatically assign the HyperFlex Edge Cluster Profile to HyperFlex servers registered under Intersight, using either the CIMC/KVM IP addresses or serial numbers.
+
+- Automatically deploy the HyperFlex Edge Cluster Profile to the assigned HyperFlex servers.
+
+- Quickly restore HyperFlex Edge Cluster Profile and Policy configurations as part of your on-prem Intersight backup solution.
+
+- Supported with Intersight SaaS, Connected Virtual Appliance, and Private Virtual Appliance.
+
+## Prerequisites
 1. Python 3 installed, which can be downloaded from [https://www.python.org/downloads/](https://www.python.org/downloads/).
 2. Install the Cisco Intersight SDK for Python by running the following command:
    ```
@@ -69,7 +70,7 @@ Here are a few of the new features:
 
     ![Figure 8 - Gather the server attributes](./assets/Figure_8_Gather_the_server_attributes.png "Figure 8 - Gather the server attributes")
 
-## How to Use:
+## How to Use
 1. Please ensure that the above [**Prerequisites**](https://github.com/ugo-emekauwa/hx-auto-deploy#prerequisites) have been met.
 2. Edit the HX_Auto_Deploy.py file to set the **`key_id`** variable using the following instructions:
 
@@ -128,7 +129,7 @@ Here are a few of the new features:
 
 The **HyperFlex Notification Tool** available on GitHub at [https://github.com/ugo-emekauwa/hyperflex-notification-tool](https://github.com/ugo-emekauwa/hyperflex-notification-tool) can be used to receive automated updates on the status of the HyperFlex Edge deployment.
 
-## Use Cases:
+## Where to Demo
 The HyperFlex Edge Automated Deployment Tool for Cisco Intersight is featured on Cisco dCloud in the following labs:
 
 1. [_Cisco HyperFlex Edge 4.5 with Intersight v1 (All Flash, 2-Node)_](https://dcloud2-rtp.cisco.com/content/demo/760975) - See the section **Deploy HyperFlex Using API**.
@@ -137,14 +138,15 @@ The HyperFlex Edge Automated Deployment Tool for Cisco Intersight is featured on
 
 dCloud is available at [https://dcloud.cisco.com](https://dcloud.cisco.com), where Cisco product demonstrations and labs can be found in the Catalog.
 
-## Related Tools:
-Here are similar tools to help administer and manage Cisco HyperFlex environments.
+## Related Tools
+Here are similar tools to help administer and manage Cisco HyperFlex and UCS environments.
+- [Cisco IMM Automation Tools](https://github.com/ugo-emekauwa/cisco-imm-automation-tools)
 - [HyperFlex Notification Tool for Cisco Intersight](https://github.com/ugo-emekauwa/hyperflex-notification-tool)
 - [Cisco HyperFlex API Token Manager](https://github.com/ugo-emekauwa/hx-api-token-manager)
 - [HyperFlex HTML Plug-In Automated Installer](https://github.com/ugo-emekauwa/hx-html-plugin-auto-installer)
 
-## Author:
+## Author
 Ugo Emekauwa
 
-## Contact Information:
+## Contact Information
 uemekauw@cisco.com or uemekauwa@gmail.com
