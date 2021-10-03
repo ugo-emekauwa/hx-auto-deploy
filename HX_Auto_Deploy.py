@@ -164,7 +164,6 @@ import sys
 import json
 import ipaddress
 import traceback
-import requests
 import intersight
 from intersight.intersight_api_client import IntersightApiClient
 
