@@ -11,7 +11,7 @@
 
 [![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/ugo-emekauwa/hx-auto-deploy)
 
-## Features
+## Use Cases
 - Automatically build a HyperFlex Edge Cluster Profile with all Policies configured to your exact specification. Anything that can be done through the Intersight GUI can be done here!
 
 - Automatically assign the HyperFlex Edge Cluster Profile to HyperFlex servers registered under Intersight, using either the CIMC/KVM IP addresses or serial numbers.
